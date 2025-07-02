@@ -24,7 +24,7 @@ def group_entities(tokens, labels, scores, starts, ends, text):
             }
         else:  # tag == "I"
             current_entity["score"] = (current_entity["score"] + scores[i]) / 2
-            current_entity["word"] += " " + text[starts[i]:ends[i]]
+            current_entity["word"] += "" + text[starts[i]:ends[i]]
             current_entity["end"] = ends[i]
 
     if current_entity:

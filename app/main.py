@@ -23,7 +23,7 @@ model = AutoModelForTokenClassification.from_pretrained(model_name)
 
 @app.get("/")
 async def root():
-    return {"message": "Hello in our async FastAPI app for named entity recognition!"}
+    return {f"message": "Hello in our async FastAPI app for named entity recognition!"}
 
 @app.post("/token_classification", response_model=List[Entity])
 async def token_classification(request: TokenClassificationRequest):
