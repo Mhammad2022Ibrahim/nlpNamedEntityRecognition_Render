@@ -134,7 +134,7 @@
         "kind": 5,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "model_name = \"Mhammad2023/bert-finetuned-ner\"\ntokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModelForTokenClassification.from_pretrained(model_name, from_tf=True)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello in our async FastAPI app for named entity recognition!\"}\n@app.post(\"/token_classification\", response_model=List[Entity])\nasync def token_classification(request: TokenClassificationRequest):\n    inputs = tokenizer(\n        request.text,",
+        "peekOfCode": "model_name = \"Mhammad2023/bert-finetuned-ner\"\ntokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModelForTokenClassification.from_pretrained(model_name)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello in our async FastAPI app for named entity recognition!\"}\n@app.post(\"/token_classification\", response_model=List[Entity])\nasync def token_classification(request: TokenClassificationRequest):\n    inputs = tokenizer(\n        request.text,",
         "detail": "app.main",
         "documentation": {}
     },
@@ -143,7 +143,7 @@
         "kind": 5,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "tokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModelForTokenClassification.from_pretrained(model_name, from_tf=True)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello in our async FastAPI app for named entity recognition!\"}\n@app.post(\"/token_classification\", response_model=List[Entity])\nasync def token_classification(request: TokenClassificationRequest):\n    inputs = tokenizer(\n        request.text,\n        return_tensors=\"pt\",",
+        "peekOfCode": "tokenizer = AutoTokenizer.from_pretrained(model_name)\nmodel = AutoModelForTokenClassification.from_pretrained(model_name)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello in our async FastAPI app for named entity recognition!\"}\n@app.post(\"/token_classification\", response_model=List[Entity])\nasync def token_classification(request: TokenClassificationRequest):\n    inputs = tokenizer(\n        request.text,\n        return_tensors=\"pt\",",
         "detail": "app.main",
         "documentation": {}
     },
@@ -152,7 +152,7 @@
         "kind": 5,
         "importPath": "app.main",
         "description": "app.main",
-        "peekOfCode": "model = AutoModelForTokenClassification.from_pretrained(model_name, from_tf=True)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello in our async FastAPI app for named entity recognition!\"}\n@app.post(\"/token_classification\", response_model=List[Entity])\nasync def token_classification(request: TokenClassificationRequest):\n    inputs = tokenizer(\n        request.text,\n        return_tensors=\"pt\",\n        truncation=True,",
+        "peekOfCode": "model = AutoModelForTokenClassification.from_pretrained(model_name)\n@app.get(\"/\")\nasync def root():\n    return {\"message\": \"Hello in our async FastAPI app for named entity recognition!\"}\n@app.post(\"/token_classification\", response_model=List[Entity])\nasync def token_classification(request: TokenClassificationRequest):\n    inputs = tokenizer(\n        request.text,\n        return_tensors=\"pt\",\n        truncation=True,",
         "detail": "app.main",
         "documentation": {}
     },
