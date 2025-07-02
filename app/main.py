@@ -17,7 +17,9 @@ app.add_middleware(CORSMiddleware,
 # model
 model_name = "Mhammad2023/bert-finetuned-ner"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
-model = AutoModelForTokenClassification.from_pretrained(model_name)
+# model = AutoModelForTokenClassification.from_pretrained(model_name)
+model = AutoModelForTokenClassification.from_pretrained(model_name, from_tf=True)
+
 
 @app.get("/")
 async def root():
