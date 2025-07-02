@@ -2,5 +2,3 @@ fastapi
 uvicorn
 transformers
 torch
-tensorflow-cpu
-tensorflow>=2.8.0
