@@ -22,16 +22,17 @@ Model used: [Mhammad2023/bert-finetuned-ner-torch](https://huggingface.co/Mhamma
 
 ---
 
-## 🗂️ Project Structure
+## Project Structure
 
 nlpNamedEntityRecognition_Render/
 ├── app/
-│ ├── main.py # FastAPI app
-│ ├── utils.py # Token grouping logic
-│ └── schemas.py # Pydantic request/response models
-├── start.sh # Startup script for Render
-├── requirements.txt # Python dependencies
-└── README.md
+│   ├── main.py         # FastAPI app (API routes and model inference)
+│   ├── utils.py        # Token grouping logic (BIO to entity format)
+│   └── schemas.py      # Pydantic request/response models
+├── start.sh            # Startup script for Render
+├── requirements.txt    # Python dependencies
+└── README.md           # Project documentation
+
 
 ---
 
