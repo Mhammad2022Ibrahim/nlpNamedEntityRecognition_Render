@@ -6,5 +6,6 @@ venv/
 # Ignore virtual environment directory
 .env
 .vscode/
+.pytest_cache/
 
 
