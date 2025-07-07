@@ -1,5 +1,5 @@
 import pytest
-from httpx import AsyncClient
+from fastapi.testclient import AsyncClient
 from app.main import app
 
 @pytest.mark.asyncio
@@ -22,6 +22,7 @@ async def test_token_classification():
         assert "word" in entity
         assert "start" in entity
         assert "end" in entity
+
 
 # from fastapi.testclient import TestClient
 # from app.main import app
