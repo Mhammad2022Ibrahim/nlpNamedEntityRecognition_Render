@@ -7,5 +7,7 @@ venv/
 .env
 .vscode/
 .pytest_cache/
+# Ignore pytest cache directory
 
-
+**/__init__.py
+# Ignore all __init__.py files in any directory
