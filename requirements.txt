@@ -3,3 +3,16 @@ uvicorn
 transformers
 torch
 pytest
+pyasn1
+pycparser
+pydantic
+pydantic_core
+pytest-asyncio
+python-dotenv
+python-jose
+python-multipart
+six
+sniffio
+starlette
+typing-inspection
+typing_extensions
