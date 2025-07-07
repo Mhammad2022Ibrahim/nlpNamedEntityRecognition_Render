@@ -16,3 +16,6 @@ sniffio
 starlette
 typing-inspection
 typing_extensions
+h11
+httpcore
+httpx
