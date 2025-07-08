@@ -3,6 +3,7 @@ uvicorn
 transformers
 torch
 pytest
+asgi-lifespan
 pyasn1
 pycparser
 pydantic

@@ -1,13 +1,26 @@
+# import pytest
+# from app.main import app
+# import pytest_asyncio
+# from httpx import AsyncClient, ASGITransport
+
+# @pytest_asyncio.fixture(scope="function")
+# async def async_client():
+#     transport = ASGITransport(app=app)
+#     async with AsyncClient(transport=transport, base_url="http://test") as client:
+#         yield client
+
 import pytest
-from app.main import app
 import pytest_asyncio
 from httpx import AsyncClient, ASGITransport
+from asgi_lifespan import LifespanManager
+from app.main import app
 
 @pytest_asyncio.fixture(scope="function")
 async def async_client():
-    transport = ASGITransport(app=app)
-    async with AsyncClient(transport=transport, base_url="http://test") as client:
-        yield client
+    async with LifespanManager(app):
+        async with AsyncClient(transport=ASGITransport(app=app), base_url="http://test") as client:
+            yield client
+
 
 @pytest.mark.asyncio
 async def test_root(async_client):
