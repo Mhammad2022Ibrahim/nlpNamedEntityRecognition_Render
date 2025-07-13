@@ -35,20 +35,6 @@ app.add_middleware(CORSMiddleware,
 # tokenizer = AutoTokenizer.from_pretrained(model_name)
 # model = AutoModelForTokenClassification.from_pretrained(model_name)
 
-
-
-# @app.on_event("startup")
-# def load_model():
-#     global model, tokenizer
-#     model_name = "Mhammad2023/bert-finetuned-ner-torch"
-#     tokenizer = AutoTokenizer.from_pretrained(model_name)
-#     # model = AutoModelForTokenClassification.from_pretrained(model_name)
-#     model = AutoModelForTokenClassification.from_pretrained(model_name).to("cpu")
-#     torch.set_num_threads(1)  # Optional: limits CPU usage
-#     model.eval()  # Ensures torch uses less memory and disables dropout etc.
-
-
-
 @app.get("/")
 async def root():
     return {f"message": "Hello in our async FastAPI app for named entity recognition!"}
@@ -87,39 +73,6 @@ async def token_classification(request: TokenClassificationRequest, req: Request
 
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
-
-
-# @app.post("/token_classification", response_model=List[Entity])
-# async def token_classification(request: TokenClassificationRequest):
-#     try:
-#         inputs = tokenizer(
-#             request.text,
-#             return_tensors="pt",
-#             truncation=True,
-#             padding=True,
-#             return_offsets_mapping=True
-#         )
-#         offset_mapping = inputs.pop("offset_mapping")[0]
-#         input_ids = inputs["input_ids"]
-
-#         with torch.no_grad():
-#             outputs = model(**inputs)
-
-#         logits = outputs.logits[0]
-#         predictions = torch.argmax(logits, dim=-1).tolist()
-#         tokens = tokenizer.convert_ids_to_tokens(input_ids[0].tolist())
-#         labels = [model.config.id2label[p] for p in predictions]
-#         scores = torch.softmax(logits, dim=-1).max(dim=-1).values.tolist()
-
-#         start = [s for s, _ in offset_mapping]
-#         end = [e for _, e in offset_mapping]
-
-#         entities = group_entities(tokens, labels, scores, start, end, request.text)
-
-#         return entities
-
-#     except Exception as e:
-#         raise HTTPException(status_code=500, detail=str(e))
 
 
 # @app.post("/token_classification", response_model=List[Entity])
